@@ -44,9 +44,9 @@ class Employee extends Person {
 
     getData() {
         return {
-            nama: this.getNama(),
-            NIK: this.getNIK(),
-            gender: this.getGender(),
+            nama: super.getNama(),
+            NIK: super.getNIK(),
+            gender: super.getGender(),
             salary: this.salary,
             title: this.title,
         };
@@ -66,9 +66,14 @@ class Student extends Person {
         this.gender = gender;
     }
 
+    getNama() {
+        return 'Mahasiswa ' + this.nama
+    }
+
     getData() {
         return {
-            nama: this.getNama(),
+            namaPakeMahasiswa: this.getNama(),
+            nama: super.getNama(),
             NIK: this.getNIK(),
             gender: this.getGender(),
             campus: this.campus,
